@@ -20,7 +20,9 @@ daily_steps <- aggregate(steps ~ date, data = activity, sum, na.rm = TRUE)
 ```{r}
 sum(daily_steps$steps,na.rm=T)
 ```
-570608
+
+sum 570608
+
 
 2.) Make a histogram of the total number of steps taken each day
 
@@ -35,8 +37,10 @@ hist(daily_steps$steps,xlab="day",col="light blue",main="Total Steps by Day",yli
 round(mean(daily_steps$steps,na.rm=T),2)
 round(median(daily_steps$steps,na.rm=T),2)
 ```
-10766.19
-10765
+
+mean 10766.19
+
+median 10765
 
 ###What is the average daily activity pattern?
 
@@ -56,9 +60,11 @@ the maximum number of steps?
 max(time_series)
 which(time_series==max(time_series))
 ```
+
 max 206.1698
 
 series number 835
+
 series number 104
 
 ###Imputing missing values
@@ -68,7 +74,8 @@ number of rows with NAs)
 ```{r}
 length(which(is.na(activity$steps)==TRUE))
 ```
-2304
+
+length 2304
 
 2.) Devise a strategy for filling in all of the missing values in the dataset. The strategy 
 does not need to be sophisticated. For example, you could use the mean/median for that day, 
@@ -128,8 +135,10 @@ The histogram has a higher peak height. The frequency now maxes out at 35 instea
 round(mean(new_d.steps$steps),2)
 median(new_d.steps$steps)
 ```
-10766.19
-10766.19
+
+mean 10766.19
+
+median 10766.19
 
 
 After replacing the values the mean is the same but the median is slightly different.
