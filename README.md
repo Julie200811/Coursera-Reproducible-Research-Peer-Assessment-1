@@ -65,8 +65,6 @@ max 206.1698
 
 series number 835
 
-series number 104
-
 ###Imputing missing values
 
 1.) Calculate and report the total number of missing values in the dataset (i.e. the total 
