@@ -25,7 +25,9 @@ sum(daily_steps$steps,na.rm=T)
 ```{r}
 hist(daily_steps$steps,xlab="day",col="light blue",main="Total Steps by Day",ylim=c(0,45))
 ```
+#Markdown for image#  ![alt tag](https://github.com/brianfleharty/Coursera-Reproducible-Research-Peer-Assessment-1/blob/master/total_steps_#hist01.png)
 
+![alt tag](https://github.com/brianfleharty/Coursera-Reproducible-Research-Peer-Assessment-1/blob/master/total_steps_hist01.png)
 
 3.) Calculate and report the mean and median of the total number of steps taken per day
 
