@@ -25,8 +25,6 @@ sum(daily_steps$steps,na.rm=T)
 ```{r}
 hist(daily_steps$steps,xlab="day",col="light blue",main="Total Steps by Day",ylim=c(0,45))
 ```
-#Markdown for image#  ![alt tag](https://github.com/brianfleharty/Coursera-Reproducible-Research-Peer-Assessment-1/blob/master/total_steps_#hist01.png)
-
 ![alt tag](https://github.com/brianfleharty/Coursera-Reproducible-Research-Peer-Assessment-1/blob/master/total_steps_hist01.png)
 
 3.) Calculate and report the mean and median of the total number of steps taken per day
@@ -45,7 +43,7 @@ time_series<-tapply(activity$steps, activity$interval, mean, na.rm = TRUE)
 plot(row.names(time_series),time_series,type="l",col="blue",ylab="average across all days"
 ,xlab = "5-min interval",main="Average Number of Steps Taken")
 ```
-
+![alt tag](https://github.com/brianfleharty/Coursera-Reproducible-Research-Peer-Assessment-1/blob/master/time_series02.png)
 
 2.) Which 5-minute interval, on average across all the days in the dataset, contains 
 the maximum number of steps?
@@ -61,6 +59,7 @@ number of rows with NAs)
 ```{r}
 length(which(is.na(activity$steps)==TRUE))
 ```
+
 
 2.) Devise a strategy for filling in all of the missing values in the dataset. The strategy 
 does not need to be sophisticated. For example, you could use the mean/median for that day, 
@@ -112,6 +111,7 @@ hist(new_d.steps$steps,xlab="Number of Steps",col="red",main="Total Steps by Day
 hist(daily_steps$steps,xlab="Number of Steps",col="blue",main="Total Steps by Day",ylim=c(0,45), add=T)
 legend("topright", c("Imputed", "Non-imputed"), col=c("blue", "red"), lwd=10)
 ```
+![alt tag](https://github.com/brianfleharty/Coursera-Reproducible-Research-Peer-Assessment-1/blob/master/total_steps02.png)
 
 The histogram has a higher peak height. The frequency now maxes out at 35 instead of 30.
 
@@ -186,6 +186,9 @@ plot(row.names(new_d.set2_we),new_d.set2_we,type="l",col="blue",ylab="number of 
 plot(row.names(new_d.set2_wd),new_d.set2_wd,type="l",col="blue",ylab="number of steps"
 ,xlab = "5-min interval",main="weekday")
 ```
+![alt tag](https://github.com/brianfleharty/Coursera-Reproducible-Research-Peer-Assessment-1/blob/master/weekend.png)
+
+![alt tag](https://github.com/brianfleharty/Coursera-Reproducible-Research-Peer-Assessment-1/blob/master/weekday.png)
 
 There are differences in activity.  The weekday has more activity in the morning and the weekend 
 has more activity in the afternoon.
