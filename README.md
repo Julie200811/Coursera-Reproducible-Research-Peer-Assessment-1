@@ -106,7 +106,9 @@ estimates from the first part of the assignment? What is the impact of imputing 
 data on the estimates of the total daily number of steps?
 ```{r}
 new_d.steps<-aggregate(steps ~ date, data = new_d.set, sum, na.rm = TRUE)
-hist(new_d.steps$steps,xlab="day",col="red",main="Total Steps by Day",ylim=c(0,45))
+hist(new_d.steps$steps,xlab="Number of Steps",col="red",main="Total Steps by Day",ylim=c(0,45))
+hist(daily_steps$steps,xlab="Number of Steps",col="blue",main="Total Steps by Day",ylim=c(0,45), add=T)
+legend("topright", c("Imputed", "Non-imputed"), col=c("blue", "red"), lwd=10)
 ```
 
 The histogram has a higher peak height. The frequency now maxes out at 35 instead of 30.
