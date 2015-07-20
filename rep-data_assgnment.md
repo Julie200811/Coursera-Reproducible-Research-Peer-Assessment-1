@@ -20,12 +20,16 @@ daily_steps <- aggregate(steps ~ date, data = activity, sum, na.rm = TRUE)
 ```{r}
 sum(daily_steps$steps,na.rm=T)
 ```
+
+sum 570608
+
 2.) Make a histogram of the total number of steps taken each day
 
 ```{r}
 hist(daily_steps$steps,xlab="day",col="light blue",main="Total Steps by Day",ylim=c(0,45))
 ```
 
+![alt tag](https://github.com/brianfleharty/Coursera-Reproducible-Research-Peer-Assessment-1/blob/master/total_steps_hist01.png)
 
 3.) Calculate and report the mean and median of the total number of steps taken per day
 
@@ -33,6 +37,11 @@ hist(daily_steps$steps,xlab="day",col="light blue",main="Total Steps by Day",yli
 round(mean(daily_steps$steps,na.rm=T),2)
 round(median(daily_steps$steps,na.rm=T),2)
 ```
+
+mean 10766.19
+
+median 10765
+
 ###What is the average daily activity pattern?
 
 1.) Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the 
@@ -44,6 +53,7 @@ plot(row.names(time_series),time_series,type="l",col="blue",ylab="average across
 ,xlab = "5-min interval",main="Average Number of Steps Taken")
 ```
 
+![alt tag](https://github.com/brianfleharty/Coursera-Reproducible-Research-Peer-Assessment-1/blob/master/time_series02.png)
 
 2.) Which 5-minute interval, on average across all the days in the dataset, contains 
 the maximum number of steps?
@@ -52,6 +62,10 @@ max(time_series)
 which(time_series==max(time_series))
 ```
 
+max 206.1698
+
+series number 835
+
 ###Imputing missing values
 
 1.) Calculate and report the total number of missing values in the dataset (i.e. the total 
@@ -59,6 +73,8 @@ number of rows with NAs)
 ```{r}
 length(which(is.na(activity$steps)==TRUE))
 ```
+
+length 2304
 
 2.) Devise a strategy for filling in all of the missing values in the dataset. The strategy 
 does not need to be sophisticated. For example, you could use the mean/median for that day, 
@@ -111,12 +127,18 @@ hist(daily_steps$steps,xlab="Number of Steps",col="blue",main="Total Steps by Da
 legend("topright", c("Imputed", "Non-imputed"), col=c("blue", "red"), lwd=10)
 ```
 
+![alt tag](https://github.com/brianfleharty/Coursera-Reproducible-Research-Peer-Assessment-1/blob/master/total_steps02.png)
+
 The histogram has a higher peak height. The frequency now maxes out at 35 instead of 30.
 
 ```{r}
 round(mean(new_d.steps$steps),2)
 median(new_d.steps$steps)
 ```
+
+mean 10766.19
+
+median 10766.19
 
 After replacing the values the mean is the same but the median is slightly different.
 
@@ -184,6 +206,11 @@ plot(row.names(new_d.set2_we),new_d.set2_we,type="l",col="blue",ylab="number of 
 plot(row.names(new_d.set2_wd),new_d.set2_wd,type="l",col="blue",ylab="number of steps"
 ,xlab = "5-min interval",main="weekday")
 ```
+
+![alt tag](https://github.com/brianfleharty/Coursera-Reproducible-Research-Peer-Assessment-1/blob/master/weekend.png)
+
+![alt tag](https://github.com/brianfleharty/Coursera-Reproducible-Research-Peer-Assessment-1/blob/master/weekday.png)
+
 
 There are differences in activity.  The weekday has more activity in the morning and the weekend 
 has more activity in the afternoon.
